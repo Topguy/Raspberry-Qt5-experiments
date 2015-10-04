@@ -1,4 +1,5 @@
-# qt5test.qml
+//Very simple QML test borrowed from Qt docs.
+//Will be expanded if needed.
 
 import QtQuick 2.3
 
