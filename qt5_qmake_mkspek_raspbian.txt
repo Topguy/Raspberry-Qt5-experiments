@@ -1,0 +1,27 @@
+pi@raspberrypi ~/Raspberry-Qt5-experiments $ qmake -query
+QT_SYSROOT:
+QT_INSTALL_PREFIX:/usr
+QT_INSTALL_ARCHDATA:/usr/lib/arm-linux-gnueabihf/qt5
+QT_INSTALL_DATA:/usr/share/qt5
+QT_INSTALL_DOCS:/usr/share/qt5/doc
+QT_INSTALL_HEADERS:/usr/include/arm-linux-gnueabihf/qt5
+QT_INSTALL_LIBS:/usr/lib/arm-linux-gnueabihf
+QT_INSTALL_LIBEXECS:/usr/lib/arm-linux-gnueabihf/qt5/libexec
+QT_INSTALL_BINS:/usr/lib/arm-linux-gnueabihf/qt5/bin
+QT_INSTALL_TESTS:/usr/tests
+QT_INSTALL_PLUGINS:/usr/lib/arm-linux-gnueabihf/qt5/plugins
+QT_INSTALL_IMPORTS:/usr/lib/arm-linux-gnueabihf/qt5/imports
+QT_INSTALL_QML:/usr/lib/arm-linux-gnueabihf/qt5/qml
+QT_INSTALL_TRANSLATIONS:/usr/share/qt5/translations
+QT_INSTALL_CONFIGURATION:/etc/xdg
+QT_INSTALL_EXAMPLES:/usr/lib/arm-linux-gnueabihf/qt5/examples
+QT_INSTALL_DEMOS:/usr/lib/arm-linux-gnueabihf/qt5/examples
+QT_HOST_PREFIX:/usr
+QT_HOST_DATA:/usr/lib/arm-linux-gnueabihf/qt5
+QT_HOST_BINS:/usr/lib/arm-linux-gnueabihf/qt5/bin
+QT_HOST_LIBS:/usr/lib/arm-linux-gnueabihf
+QMAKE_SPEC:linux-g++
+QMAKE_XSPEC:linux-g++
+QMAKE_VERSION:3.0
+QT_VERSION:5.3.2
+
