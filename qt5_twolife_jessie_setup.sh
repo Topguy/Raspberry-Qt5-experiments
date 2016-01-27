@@ -11,7 +11,7 @@ deb-src https://twolife.be/raspbian/ jessie main
 EOF'
 
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key 2578B775
-sudo apt-get -y install apt-transport-https
+sudo apt-get -y --force-yes install apt-transport-https
 
 sudo apt-get update
 sudo apt-get -y --force-yes dist-upgrade
