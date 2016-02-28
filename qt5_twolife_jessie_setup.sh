@@ -3,18 +3,19 @@
 # Adventures with Qt5 and Raspbian Jessie.
 # Using libraries from twolife.be
 
+sudo apt-get update
+sudo apt-get -y --force-yes dist-upgrade
+sudo apt-get -y --force-yes install apt-transport-https
+
 # Add the twolife.be repository.
 sudo bash -c 'cat << EOF > /etc/apt/sources.list.d/twolife.list
 # Raspbian Jessie (stable)
-deb https://twolife.be/raspbian/ jessie main
-deb-src https://twolife.be/raspbian/ jessie main
+deb https://twolife.be/raspbian/ jessie main qt
+deb-src https://twolife.be/raspbian/ jessie main qt
 EOF'
 
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key 2578B775
-sudo apt-get -y --force-yes install apt-transport-https
 
-sudo apt-get update
-sudo apt-get -y --force-yes dist-upgrade
 
 # Install most of the needed Qt packages.
 sudo apt-get -y --force-yes install qml-module-qtquick2 qml qmlscene qml-module-qtquick-particles2
