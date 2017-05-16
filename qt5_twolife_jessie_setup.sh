@@ -16,27 +16,28 @@ EOF'
 
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key 2578B775
 
+sudo apt-get update
 
 # Install most of the needed Qt packages.
-sudo apt-get -y --force-yes install qml-module-qtquick2 qml qmlscene qml-module-qtquick-particles2
+sudo apt-get -y --force-yes install qml-module-qtquick2 qml qmlscene qml-module-qtquick-particles2 libqt5egldeviceintegration5
 
-# Install the QtQuick/QML demos
-sudo apt-get -y --force-yes install qtdeclarative5-examples
+# Optional: Install the QtQuick/QML demos
+# sudo apt-get -y --force-yes install qtdeclarative5-examples
 
-# Install some prerequisites for the demos
-sudo apt-get -y --force-yes install qml-module-qtquick-controls qml-module-qt-labs-folderlistmodel qml-module-qt-labs-settings
+# Optional: Install some prerequisites for the demos
+# sudo apt-get -y --force-yes install qml-module-qtquick-controls qml-module-qt-labs-folderlistmodel qml-module-qt-labs-settings
 
 # We unfortunatly have to fix some librarynames.
-sudo cp /opt/vc/lib/libGLESv2.so /opt/vc/lib/libGLESv2.so.bak
-sudo cp /opt/vc/lib/libEGL.so /usr/lib/arm-linux-gnueabihf/libEGL.so.bak
+#sudo cp /opt/vc/lib/libGLESv2.so /opt/vc/lib/libGLESv2.so.bak
+#sudo cp /opt/vc/lib/libEGL.so /usr/lib/arm-linux-gnueabihf/libEGL.so.bak
 
-sudo mv /opt/vc/lib/libGLESv2.so /opt/vc/lib/libGLESv2.so.2
-sudo mv /opt/vc/lib/libEGL.so /usr/lib/arm-linux-gnueabihf/libEGL.so.1
+#sudo mv /opt/vc/lib/libGLESv2.so /opt/vc/lib/libGLESv2.so.2
+#sudo mv /opt/vc/lib/libEGL.so /usr/lib/arm-linux-gnueabihf/libEGL.so.1
+
+# Probably best method for fixing the libraries.
+sudo ln -fs /opt/vc/lib/libGLESv2.so /opt/vc/lib/libGLESv2.so.2
+sudo ln -fs /opt/vc/lib/libEGL.so /usr/lib/arm-linux-gnueabihf/libEGL.so.1
 sudo ldconfig
-
-# Alternative method for fixing the libraries.
-#sudo ln -fs /opt/vc/lib/libGLESv2.so /opt/vc/lib/libGLESv2.so.2
-#sudo ln -fs /opt/vc/lib/libEGL.so /usr/lib/arm-linux-gnueabihf/libEGL.so.1
 
 # Uncomment these to add some practical environment variables to every login.
 #cat << EOF >> ~/.profile
@@ -45,7 +46,7 @@ sudo ldconfig
 #export LD_LIBRARY_PATH=/opt/vc/lib
 #EOF
 
-# Create a batchfile for running some demo
+# Create an EXAMPLE batchfile for running some demo. 
 cat << EOF > photoviewer.sh
 #!/bin/bash
 export QT_SELECT=5
