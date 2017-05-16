@@ -36,7 +36,7 @@ sudo apt-get -y --force-yes install qml-module-qtquick2 qml qmlscene qml-module-
 
 # Probably best method for fixing the libraries.
 sudo ln -fs /opt/vc/lib/libGLESv2.so /opt/vc/lib/libGLESv2.so.2
-sudo ln -fs /opt/vc/lib/libEGL.so /usr/lib/arm-linux-gnueabihf/libEGL.so.1
+sudo ln -fs /opt/vc/lib/libEGL.so /opt/vc/lib/libEGL.so.1
 sudo ldconfig
 
 # Uncomment these to add some practical environment variables to every login.
